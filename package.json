@@ -1,0 +1,13 @@
+{
+  "name": "renderizador-make-loja",
+  "version": "1.0.0",
+  "description": "API gratuita para renderizar artes da loja via Puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^21.0.0"
+  }
+}
