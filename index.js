@@ -4,7 +4,7 @@ const app = express();
 
 // Aumentamos o limite para receber HTMLs grandes se necessário
 app.use(express.json({ limit: '10mb' }));
-
+app.get('/', (req, res) => res.send('O Renderizador está Online!'));
 app.post('/render', async (req, res) => {
     const { html } = req.body;
 
