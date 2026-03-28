@@ -15,18 +15,15 @@ app.post('/render', async (req, res) => {
     let browser;
     try {
         // Configurações específicas para rodar em servidores (Linux/Docker)
+        // Configurações para rodar dentro do Docker no Railway
         browser = await puppeteer.launch({
+            executablePath: '/usr/bin/google-chrome', // Caminho fixo do Chrome no Docker
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
                 '--disable-dev-shm-usage',
-                '--disable-accelerated-2d-canvas',
-                '--no-first-run',
-                '--no-zygote',
-                '--single-process',
                 '--disable-gpu'
-            ],
-            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || null,
+            ]
         });
 
         const page = await browser.newPage();
